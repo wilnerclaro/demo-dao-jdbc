@@ -12,7 +12,7 @@ public class Program {
 	
 	SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy");
 		
-	
+	System.out.println("=== TEST 1: seller findById ===");
 	SellerDao sellerDao = DaoFactory.createSellerDao();
 	Seller seller = sellerDao.findById(3);
 	
