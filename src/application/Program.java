@@ -3,6 +3,7 @@ package application;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
@@ -12,7 +13,7 @@ import model.entities.Seller;
 public class Program {
 
 	public static void main(String[] args) {
-	
+	Scanner sc = new Scanner(System.in);
 	SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy");
 	SellerDao sellerDao = DaoFactory.createSellerDao();
 	
@@ -43,6 +44,12 @@ public class Program {
 	seller.setName("Martha Waine");
 	sellerDao.update(seller);
 	System.out.println("Updated Completed!");
+	
+	System.out.println("\n=== TEST 7: seller delete ===");
+	System.out.println("Entre id for delete test: ");
+	int id = sc.nextInt();
+	sellerDao.deleteById(id);
+	System.out.println("Deleted completed!");
 	}
 	
 	
